@@ -23,7 +23,7 @@ services:
       - CLEANUP_MAX_AGE_HOURS=${CLEANUP_MAX_AGE_HOURS:-1}
       - CLEANUP_MAX_DISK_MB=${CLEANUP_MAX_DISK_MB:-5000}
       - CLEANUP_INTERVAL_SECONDS=${CLEANUP_INTERVAL_SECONDS:-300}
-      - DASHBOARD_URL=http://dashboard:8080
+      - DASHBOARD_URL=http://dashboard:8880
     volumes:
       - downloads:/downloads
     depends_on:
@@ -58,7 +58,7 @@ services:
       - dashboard-data:/data
       - downloads:/downloads:ro
     ports:
-      - "${DASHBOARD_PORT:-8080}:8080"
+      - "${DASHBOARD_PORT:-8880}:8880"
     depends_on:
       - reclip
     networks:
